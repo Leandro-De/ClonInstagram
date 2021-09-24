@@ -6,6 +6,7 @@ import ImageNoFound from "../../../assets/png/avatar.png";
 import "./RightHeader.scss";
 
 export default function RightHeader() {
+  const { auth } = useAuth();
   return (
     <>
       <div className="right_header">
@@ -13,7 +14,7 @@ export default function RightHeader() {
           <Icon name="home" />
         </Link>
         <Icon name="plus" />
-        <Link to="/">
+        <Link to={`/${auth.username}`}>
           <Image src={ImageNoFound} avatar />
         </Link>
       </div>
